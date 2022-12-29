@@ -1,6 +1,6 @@
 alembic==1.9.1
 anyio==3.6.2
-backports.zoneinfo==0.2.1
+backports.zoneinfo==0.2.1;python_version<"3.9"
 bcrypt==4.0.1
 certifi==2022.9.24
 charset-normalizer==2.1.1
