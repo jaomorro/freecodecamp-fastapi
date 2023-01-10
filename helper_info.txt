@@ -1,3 +1,8 @@
 pip3 install fastapi\[all\]
 pip3 install psycopg2-binary
 Use returning * after insert/delete/update sql statement to return the impacted records that can then be picked up by fecthone/all
+
+
+DATABASE_HOSTNAME=host.docker.internal
+
+In CMD place [./script]

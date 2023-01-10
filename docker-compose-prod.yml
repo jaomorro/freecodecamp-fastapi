@@ -1,7 +1,7 @@
 version: "3"
 services:
   api:
-    image: sloppynetworks/fastapi-app
+    image: jaomorro/freecodecamp-fastapi
     ports:
       - 80:8000
     environment:

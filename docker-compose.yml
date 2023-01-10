@@ -6,6 +6,9 @@ services:
       - postgres
     ports:
       - "8000:8000"
+    volumes:
+      - ./:/usr/src/app:ro  # ro is for read-only. Ensures files can only be changed on local and not in container
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     # env_file:
     #   - ./.env
     environment:
@@ -24,17 +27,17 @@ services:
       - POSTGRES_DB=fastapi
     volumes:
       - postgres-db:/var/lib/postgresql/data # where data is stored on the container
-  alembic:
-    build: .
-    command: alembic upgrade head
-    environment:
-      - DATABASE_HOSTNAME=postgres
-      - DATABASE_PORT=5432
-      - DATABASE_PASSWORD=postgres
-      - DATABASE_NAME=fastapi
-      - DATABASE_USERNAME=postgres
-    depends_on:
-      - postgres
+  # alembic:
+  #   build: .
+  #   command: alembic upgrade head
+  #   environment:
+  #     - DATABASE_HOSTNAME=postgres
+  #     - DATABASE_PORT=5432
+  #     - DATABASE_PASSWORD=postgres
+  #     - DATABASE_NAME=fastapi
+  #     - DATABASE_USERNAME=postgres
+  #   depends_on:
+  #     - postgres
 volumes:
   postgres-db:
 
