@@ -3,6 +3,8 @@ pip3 install psycopg2-binary
 Use returning * after insert/delete/update sql statement to return the impacted records that can then be picked up by fecthone/all
 
 
+# If you want to use a local database from Docker
 DATABASE_HOSTNAME=host.docker.internal
 
+# If you want to call startup script in Dockerfile
 In CMD place [./script]

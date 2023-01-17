@@ -23,8 +23,9 @@ services:
   postgres:
     image: postgres
     environment:
+        # default user is postgres. This will set the password for the that user with superuser privileges. 
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=fastapi
+      - POSTGRES_DB=fastapi # this will be the default database
     volumes:
       - postgres-db:/var/lib/postgresql/data # where data is stored on the container
   # alembic:
